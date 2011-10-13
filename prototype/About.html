@@ -1,0 +1,280 @@
+
+
+<html lang="en">
+<html xmlns:fb="https://www.facebook.com/2008/fbml">
+ 
+<head> 
+	<title>WishForge | About Us</title> 
+	<link rel="shortcut icon" href="/ui/favicon.ico" type="image/x-icon" />
+	<meta charset="utf-8"> 
+	
+		<!--	
+		
+		/*
+			Main page.
+			div for
+				title
+				pic
+				buttons
+				lists
+		*/
+		
+		
+		
+		
+		
+		-->
+		
+		
+		
+	
+	
+		<!-- TABLESORTER stuff -->
+			<!-- CSS for table sorter (table.js) -->
+			<LINK href="wishforge.css" rel="stylesheet" type="text/css">
+			<!-- script reference for table sorting and filtering (from http://www.javascripttoolbox.com/lib/table/index.php) -->
+			<script type="text/javascript" src="http://www.fractalgames.com/js/table.js"></script> 
+			<!--References for jquery tablesorter (functionality for sorting tables). See http://tablesorter.com for details. -->
+		
+		<!-- Jquery -->
+			<script type="text/javascript" src="http://www.fractalgames.com/js/jquery-latest.js"></script> 
+			<!-- Jquery Calendar CSS [this also allows for tabs.]-->
+			<!-- <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+			-->
+	
+		<!-- POPUP stuff -->
+			<!-- CSS for popup script (from http://www.dynamicdrive.com/dynamicindex4/imagetooltip.htm)-->
+			<LINK href="http://www.fractalgames.com/js/popup.css">
+			<!-- JS for popup script (from http://www.dynamicdrive.com/dynamicindex4/imagetooltip.htm)-->
+			<script type="text/javascript" src="http://www.fractalgames.com/js/popup.js"></script>
+	
+		<!-- Google Maps + Places API -->	
+			<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true&amp;libraries=places"></script> 	
+	
+	
+		<script> 	
+		
+			// JQuery scripts		
+			/* Sticky header */ // Hack - actually doing this from the child windows, not this one. Ick
+			var y=0;
+			$(document).ready(function(){
+				
+				 $(window).scroll(function(){
+				  // get the height of #wrap
+					
+				  y = $(window).scrollTop();
+				  // alert ('y was '+y); 
+				  if( y > (446) ){ // Check if we scrolled down past the tabs
+				   
+					   // if we are show keyboardTips
+					   $("#sticky").fadeIn("fast");
+			  		   $("#stickyMap").fadeIn("fast");				   
+					  } else {
+					   $('#sticky').fadeOut('fast');
+					   $('#stickyMap').fadeOut('fast');
+				  }
+				  
+				 });
+				 
+				 
+				})
+				
+			// JQuery to dynamically change div heights
+				function showHeight(ele, h) {
+				      $("div").text("The height for the " + ele + 
+				                    " is " + h + "px.");
+				    }
+	
+		       $("#getp").click(function () { 
+			      showHeight("paragraph", $("p").height()); 
+			    });
+			    
+			    			    
+				$("div").one('click', function () {
+				      $(this).height(30)
+				             .css({});
+				    });
+				
+				
+			// For mousover locations to hover map, see: http://api.jquery.com/mouseover/
+			
+				
+				
+				
+				
+				
+				
+	 	</script>
+		<script>
+		function emailMe(subject,form) {
+			/* alert ('test');*/ 
+	    	$.ajax({
+	            type: "POST",  
+	            url: "/php/EmailMe.php",  
+	            data: "subject="+subject
+	            	+"&message="+form.URL.value, 
+	            success: function(data){  
+	            	alert ('Thank you for your submission. '+form.URL.value+' has been received.');
+	                // alert('AddRowCoworking success: data was '+data);
+	                // On success, immediately redraw the div so the user can see the new values they just entered.
+	            },
+	            error: function (xhr, ajaxOptions, thrownError){
+					//alert(xhr.statusText);
+					//alert(thrownError);
+					alert(xhr.statusText+', '+thrownError+' Error: your entry was not received. Please email it directly to charles@hactus.com and I will add it manually.');
+	            }
+	        });
+		}
+		
+		
+		function iFrameHeight (height) {
+	//		document.getElementById("iFrame").style.height = height;
+			document.getElementById("notiframe").style.height = height;
+	
+		
+		}
+		
+				
+		function switchTab(url) {
+			
+			document.getElementById('tabIframeWrapper').innerHTML = 
+				'<object id="notiframe" name="foo" type="text/html" data="'+url+'"></object>';
+	
+		}
+	
+		// Tabs functionality [from view-source:http://www.brainjar.com/css/tabs/demo.html] 
+		function synchTab(n) {
+	
+		  // Check all links.
+		  var tabs = document.getElementById("tabs");	
+		  var elList = tabs.getElementsByTagName("A");
+		  for (var i = 0; i < elList.length; i++) {
+	
+			    // Check if the link's target matches the frame being loaded.
+			    if (i == n)  {  // If the link's URL matches the page being loaded, activate it.
+			        elList[i].className += " activeTab";
+			        elList[i].blur();
+			      }
+			      else removeName(elList[i], "activeTab"); // Otherwise, make sure the tab is deactivated.
+			}
+			
+		}
+		
+		function removeName(el, name) {	  var i, curList, newList;	  if (el.className == null)    return;	  // Remove the given class name from the element's className property.
+		  newList = new Array();	  curList = el.className.split(" ");	  for (i = 0; i < curList.length; i++)	    if (curList[i] != name)
+		      newList.push(curList[i]);	  el.className = newList.join(" ");	}
+		
+		//]]>
+	
+	
+	
+		function fade(eid)	{
+			var TimeToFade = 500; //ms
+			var element = document.getElementById(eid);
+			if(element == null)
+			  return;
+			 
+			if(element.FadeState == null)
+			{
+			  if(element.style.opacity == null 
+			      || element.style.opacity == '' 
+			      || element.style.opacity == '1')
+			  {
+			    element.FadeState = 2;
+			  }
+			  else
+			  {
+			    element.FadeState = -2;
+			  }
+			}
+			  
+			if(element.FadeState == 1 || element.FadeState == -1)
+			{
+			  element.FadeState = element.FadeState == 1 ? -1 : 1;
+			  element.FadeTimeLeft = TimeToFade - element.FadeTimeLeft;
+			}
+			else
+			{
+			  element.FadeState = element.FadeState == 2 ? -1 : 1;
+			  element.FadeTimeLeft = TimeToFade;
+			  setTimeout("animateFade(" + new Date().getTime() + ",'" + eid + "')", 33);
+			}  
+		}
+	
+	
+		
+			// Simple WaitForMiliseconds function
+			function WaitForSeconds(seconds) 	{	
+				millis = seconds * 1000;
+				var date = new Date();	
+				var curDate = null;
+				do { curDate = new Date(); }  while(curDate-date < millis);
+			} 
+	
+			
+		function initialize() {
+			// Select the first tab. 
+			//synchTab(0);
+			/*
+			var t=setTimeout(function(){ 
+				showMarkers(mapObject.events, markerColor.green)},
+				750);
+			*/
+		}
+			
+		
+		}
+	
+	</script>
+	
+	
+	
+	
+		
+		<!-- Google Analytics -->	
+		<script type="text/javascript">
+		
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-20709274-3']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		
+		</script>
+		<!-- /Google Analytics -->
+		
+	</head> 
+	<body> <!-- onload="initialize()"-->
+		<div id="sticky" style="display:none"></div>
+		<div id="stickyMap" style="display:none"></div>
+	
+		<div id="header">
+		
+			<!-- wish picture -->
+			<div id="picture" style="background: url('/ui/wishforge_pic.png'); position:absolute; left:0%; top:0px;">	
+			</div>
+	
+			<div style="position:absolute; right:65%; z-index:10001; top:15px">
+				<a href="http://www.qubid.tv">
+					<img src="/ui/wishforge_logo.png" style="margin:10px;">
+				</a>
+			</div>
+		</div>
+		
+		<div id="mainText" style="position:relative; left:5%">
+			<font color=white>
+			<br><h2>About Us</h2>
+			<br>
+			<br>
+			<p> Many people give to charities with little or no oversight. The motives are great, but money is often wasted on overhead, misapprorpaition, or just plain inefficiency. WishForge takes donations and incentive out of the hands of those behind closed doors, and opens up a new world of collaboration and accountability, so the world can work together to make big changes. etc..etc..
+			<br>
+			<p> 1. Christopher Rasch, Founder and CEO, ...blah blah blah .. ChrisRasch.com		
+			<p> 2. Charles Van Norman, cofounder and jack-of-all-trades, ...blah blah blah .. vannorman.cc		
+			
+		</div>
+	</body> 
+</html> 

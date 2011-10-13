@@ -1,0 +1,649 @@
+html { 
+	height: 100%; 
+	width: 100%;
+	}
+	
+	#header
+		{
+			/*background-color:#0F170D;*/
+			height:100px;
+			position: relative;
+			margin: 0;
+			border: 0;
+			padding: 0;
+			
+		}
+	
+	.rounded {
+		-moz-border-radius: 15px; /* Firefox */
+	    -webkit-border-radius: 15px; /* Safari */
+		-khtml-border-radius: 15px; /* ? */	
+	}
+	
+	.transparent {
+        /* Required for IE 5, 6, 7 */
+        /* ...or something to trigger hasLayout, like zoom: 1; */
+        width: 100%; 
+
+        /* Theoretically for IE 8 & 9 (more valid) */
+        /* ...but not required as filter works too */
+        /* should come BEFORE filter */
+        -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+
+        /* This works in IE 8 & 9 too */
+        /* ... but also 5, 6, 7 */
+        filter: alpha(opacity=75);
+
+        /* Older than Firefox 0.9 */
+        -moz-opacity:0.75;
+
+        /* Safari 1.x (pre WebKit!) */
+        -khtml-opacity: 0.75;
+
+        /* Modern!
+        /* Firefox 0.9+, Safari 2?, Chrome any?
+        /* Opera 9+, IE 9+ */
+        opacity: 0.75;
+	}
+	
+	#notiframe {
+		position: relative;
+		width: 97%;
+	}
+
+	#sticky {
+			position: fixed;
+			top: 0;
+			left: 1.5%;
+			z-index:1000;
+			width:97%
+		}
+
+	#stickyMap {
+			position: fixed;
+			left: 50%;
+			z-index:1000;
+		}
+
+	body { 
+		height: 100%; 
+		padding: 0;
+		margin: 0;
+		/*font-style: */
+		font-family:"Lucida Grande",Georgia,Sans-Serif;    /* working? */
+
+
+		/* CSS BACKGROUND from http://www.colorzilla.com/gradient-editor/ */
+		background: black;
+	} 
+	
+	
+
+
+
+
+	/* For text hovering over images */
+	h2 span {
+	   color: white;
+	   font: bold 24px/45px;
+	   letter-spacing: -1px;
+	   background: rgb(0, 0, 0); /* fallback color */
+	   background: rgba(0, 0, 0, 0.7);
+	   padding: 10px;
+	}
+	h2 span.spacer {
+	   padding:0 5px;
+	}
+
+
+
+
+	
+	/* map */
+	.map_canvas {
+		width: 50%; 
+		height: 300px; 
+		margin-left: 22.5%; 
+		border: solid; 
+		border-color: #0F170D;	
+	}
+	
+	/* images */
+	.image {
+	   position: relative;
+	   width: 100%; /* for IE 6 */
+	}
+	
+/*	img
+	{
+	vertical-align:text-bottom;
+	}*/
+	
+	#lightLink {
+		color:yellow;
+	}
+	/* Links */
+	A:link {text-decoration: underline; color:#2222FF;}
+	A:visited {text-decoration: underline; color:#7A005C;}
+	A:active {text-decoration: underline; color:red;}
+	A:hover {text-decoration: underline; color:red;}
+	
+	
+	/* Tabs [from view-source:http://www.brainjar.com/css/tabs/demo.html] */
+	
+	/******************************************************************************
+	* Styles for the tabbed displays.                                             *
+	******************************************************************************/
+	
+	/*-----------------------------------------------------------------------------
+	  Note: The border-radius property is a proposed feature for CSS3 which creates
+	        rounded corners. Mozilla/Netscape browsers currently support this
+	        feature via the proprietary -moz-border-radius property. Both are
+	        defined here. Browsers that support neither should simply ignore them.
+	-----------------------------------------------------------------------------*/
+	
+	div.tabBox {}
+	
+	div.tabArea {
+		/* font-size: 80%; */
+		font-weight: bold;
+		padding: 0;
+	}
+	
+	a.tab {
+	  background-image:url( "ui/tab_blank_unselected.png");
+	  background-repeat:no-repeat;
+	  background-position:left top;
+	  width: 200px;
+	  border: 0;
+	  padding: 15px 15px 30px 15px;
+	  width: 300px;
+	  text-decoration: none;
+	  top: 0px;
+	  z-index: 100;
+	  position:relative;
+	  text-align:center;
+	}
+	
+	.text {
+		z-index:1;
+		position:absolute;
+		float:center;
+	 	top:12px;
+	 	width:105px;
+		text-align:center;
+
+	}
+	
+	a.tab, a.tab:visited {
+	  color: white;
+	}
+	
+	a.tab:hover {
+	  background-image:url( "ui/tab_blank_over.png");
+	  border:0;
+	  color: #FFFFFF;
+	}
+	
+	a.tab.activeTab, a.tab.activeTab:hover, a.tab.activeTab:visited {
+	  background-image:url( "ui/tab_blank_active.png");
+	  border: 0;
+	  color: #FFFFFF;
+	}
+	
+	a.tab.activeTab {
+	  background-image:url( "ui/tab_blank_active.png");
+	  padding-bottom: 0px;
+	  top: 0px;
+	  z-index: 102;
+	}
+	
+	a.new {
+	  background-image:url( "ui/tab_blank_unselected.png");
+	}
+	
+
+	
+	
+	div.tabMain {
+	  background:transparent;
+	  border: 0;
+	  padding: 0;
+	  margin: 0;
+	  position: relative;
+	  z-index: 101;
+	}
+	
+	div.tabIframeWrapper {
+		padding: 0;
+		margin: 0 0 0 0;
+		width: 100%;
+		position: relative 0;
+	}
+	
+	iframe.tabContent {
+		background-color: #9070c0;
+		/*border: top 15px solid #305930; /* deep green color */
+		/* border-color: #305930; */
+		border:0;
+		width: 100%;
+		text-align:center;
+		/*height:5000px;*/
+		padding: 0;
+		margin: 0;
+	}
+	
+	
+	
+	
+	
+	
+	
+	/* ***** TABLES CSS **** */
+	/* Modified CSS file from http://www.javascripttoolbox.com/lib/table/table.css -- */
+	
+	/* date [calendar display with small Month, big Date, small Day stacked]*/
+	table.date {
+		border:0;
+		border-collapse: collapse;
+		margin:0;
+		padding:0;
+		text-align:center;
+		table-layout:fixed;
+		width:90px;
+		border-spacing:none;		
+		z-index: 101;
+	}
+	
+	
+	table.date td tr {
+		margin:0;
+		padding:0;
+		text-align:center;		
+    	width: 40px;
+	}
+	
+	/* For the name of the month (top) */
+	table.date td.month {
+		margin:0;
+		padding:0;
+		border: 2px solid black;
+		text-align:center;
+		background-color:#111111;
+		line-height: 12px;
+		color:#FFFFFF;
+		font-size:14px;
+		width:40px;
+	}
+	
+	/* For the name of the day (left) */
+	table.date td.day {
+		text-align:center;
+		margin:0;
+		padding:0;
+		font-size: 14px;
+		line-height: 12px;
+	}
+	
+	/* For the number of the date (center) */
+	table.date td.number {
+		text-align:center;
+		margin:0;
+		padding:0;
+		border: 2px solid black;
+		font-size: 18px;
+		line-height:21px;
+	}
+	
+	
+	/* for the mini articles feeds */
+	table.mini-articles {
+		padding:10;
+		margin:0;
+		border: 10px solid #339966;
+		border-space: none;
+		border-collapse: collapse;
+		/*background:transparent;*/
+		background:#339966;
+	}
+	
+	table.mini-articles th {
+		background-color:#339966;
+		font-size:24px;
+
+	}
+	
+	
+	table.mini-articles td {
+		background-color:#339966;
+	}
+	
+	/* sortable tables */
+	table.example {
+		border:0px solid black;
+		border-collapse:collapse;
+		width:100%;
+		
+		/*table-layout:fixed;*/
+
+	}
+	table.example th, table.example td {
+		border:0px solid #aaaaaa;
+		padding: 2px 15px 2px 15px;
+		/*white-space: nowrap;*/
+		font-size:16px;
+	}
+	
+	table.example td.time {
+		margin: 0;
+		padding: 0;
+		width:10px;
+		text-align:center;
+	}
+	
+	table.example thead th {
+		background-color:#339966; /* faded green head color */
+		color:#FFFFFF;
+		padding: 21px 11px 5px 5px;
+		font-size:22px;
+		border-right: 1px solid white;
+	
+	}
+	
+	table.example thead th.form {
+		padding: 0;
+		padding-bottom:10px;
+		margin: 0;
+		border-bottom: 1px solid white;
+	}
+	
+
+	
+	table.example tfoot td {
+		background-color:#333333;
+		color:white;
+	}
+	
+	table.example tr.tbody_header {
+		font-weight:bold;
+		/* text-align:center; */
+		background-color:#dddddd;
+	}
+	
+	table.example td.icons {
+		vertical-align:middle;
+		/* text-align: center; */
+		white-space: nowrap; 
+		margin: 1px;
+	}
+	
+	
+	
+	table.example a.pagelink {
+		padding-left:5px;
+		padding-right:5px;
+		border:0px solid #666666;
+		margin:0px 5px 0px 5px;
+	}
+	table.example a.currentpage {
+		background-color:yellow;
+	}
+	/* Striping */
+	tr {
+		background-color:#FFFFFF;
+	}
+	
+	tr.alternate {
+		background-color:#eeeeee;
+	}
+	
+	tr.alternate td.day {
+		background-color:#eeeeee;	
+	}
+	
+	tr.alternate td.first, tr.alternate td.last, tr.alternate td.middle {
+		background-color:#eeeeee;	
+	}
+		
+	table.example td.maxHeight { /* Attempt to make Locations column in Events table a static height. Try to copy "date" table. */
+		line-height:30px;
+	}
+	
+	/* Sorting */
+	th.table-sortable {
+		cursor:pointer;
+	/*	background-image:url("sorted_up.gif"); */
+		background-position:center right;
+		background-repeat:no-repeat;
+		padding:0;
+	}
+	
+	
+	th.table-sorted-asc {
+	/*	background-image:url("sorted_up.gif"); */
+		background-position:center right;
+		background-repeat:no-repeat;
+	}
+	th.table-sorted-desc {
+	/*	background-image:url("sorted_down.gif");*/
+		background-position:center right;
+		background-repeat:no-repeat;
+	}
+	th.table-filtered {
+		background-image:url("filter.gif");
+		background-position:center left;
+		background-repeat:no-repeat;
+	}
+	select.table-autofilter {
+		font-size:smaller;
+	}
+	
+	/* Examples which stray from the default */
+	table.altstripe tr.alternate2 {
+		background-color:#ccffff;
+	}
+	
+	
+	/* Sort Icon Styles */
+	table.sort01 th.table-sortable { background-image:url("icons/01_unsorted.gif"); }
+	table.sort01 th.table-sorted-asc { background-image:url("icons/01_ascending.gif"); }
+	table.sort01 th.table-sorted-desc { background-image:url("icons/01_descending.gif"); }
+	
+	table.sort02 th.table-sortable { background-image:none; padding-right:16px; }
+	table.sort02 th.table-sorted-asc { background-image:url("icons/02_ascending.gif"); }
+	table.sort02 th.table-sorted-desc { background-image:url("icons/02_descending.gif"); }
+	
+	table.sort03 th.table-sortable { background-image:none; }
+	table.sort03 th.table-sorted-asc { background-image:url("icons/03_ascending.gif"); }
+	table.sort03 th.table-sorted-desc { background-image:url("icons/03_descending.gif"); }
+	
+	table.sort04 th.table-sortable { background-image:none; }
+	table.sort04 th.table-sorted-asc { background-image:url("icons/04_ascending.gif"); }
+	table.sort04 th.table-sorted-desc { background-image:url("icons/04_descending.gif"); }
+	
+	table.sort05 th.table-sortable { background-image:url("icons/05_unsorted.gif"); padding-left:16px;}
+	table.sort05 th.table-sorted-asc { background-image:url("icons/05_ascending.gif"); }
+	table.sort05 th.table-sorted-desc { background-image:url("icons/05_descending.gif"); }
+	
+	table.sort06 th.table-sortable { background-image:none; padding-left:16px;}
+	table.sort06 th.table-sorted-asc { background-image:url("icons/06_ascending.gif"); }
+	table.sort06 th.table-sorted-desc { background-image:url("icons/06_descending.gif"); }
+	
+	table.sort07 th.table-sortable { background-image:none; }
+	table.sort07 th.table-sorted-asc { background-image:url("icons/07_ascending.gif"); }
+	table.sort07 th.table-sorted-desc { background-image:url("icons/07_descending.gif"); }
+	
+	table.sort08 th.table-sortable { background-image:none; }
+	table.sort08 th.table-sorted-asc { background-image:url("icons/08_ascending.gif"); }
+	table.sort08 th.table-sorted-desc { background-image:url("icons/08_descending.gif"); }
+	
+	table.sort09 th.table-sortable { background-image:none; padding-left:30px;}
+	table.sort09 th.table-sorted-asc { background-image:url("icons/09_ascending.gif"); }
+	table.sort09 th.table-sorted-desc { background-image:url("icons/09_descending.gif"); }
+	
+	table.sort10 th.table-sortable { background-image:url("icons/10_unsorted.gif"); }
+	table.sort10 th.table-sorted-asc { background-image:url("icons/10_ascending.gif"); }
+	table.sort10 th.table-sorted-desc { background-image:url("icons/10_descending.gif"); }
+	
+	table.sort11 th.table-sortable { background-image:url("icons/11_unsorted.gif");padding-left:24px; }
+	table.sort11 th.table-sorted-asc { background-image:url("icons/11_ascending.gif"); }
+	table.sort11 th.table-sorted-desc { background-image:url("icons/11_descending.gif"); }
+	
+	table.sort12 th.table-sortable { background-image:none; }
+	table.sort12 th.table-sorted-asc { background-image:url("icons/12_ascending.gif"); }
+	table.sort12 th.table-sorted-desc { background-image:url("icons/12_descending.gif"); }
+	
+	table.sort13 th.table-sortable { background-image:none; }
+	table.sort13 th.table-sorted-asc { background-image:url("icons/13_ascending.gif"); }
+	table.sort13 th.table-sorted-desc { background-image:url("icons/13_descending.gif"); }
+	
+	table.sort14 th.table-sortable { background-image:none; }
+	table.sort14 th.table-sorted-asc { background-image:url("icons/14_ascending.gif"); }
+	table.sort14 th.table-sorted-desc { background-image:url("icons/14_descending.gif"); }
+	
+	table.sort15 th.table-sortable { background-image:none; }
+	table.sort15 th.table-sorted-asc { background-image:url("icons/15_ascending.gif"); }
+	table.sort15 th.table-sorted-desc { background-image:url("icons/15_descending.gif"); }
+	
+	table.sort16 th.table-sortable { background-image:none; }
+	table.sort16 th.table-sorted-asc { background-image:url("icons/16_ascending.gif"); }
+	table.sort16 th.table-sorted-desc { background-image:url("icons/16_descending.gif"); }
+	
+	table.sort17 th.table-sortable { background-image:none; }
+	table.sort17 th.table-sorted-asc { background-image:url("icons/17_ascending.gif"); }
+	table.sort17 th.table-sorted-desc { background-image:url("icons/17_descending.gif"); }
+	
+	table.sort18 th.table-sortable { background-image:url("icons/18_unsorted.gif"); }
+	table.sort18 th.table-sorted-asc { background-image:url("icons/18_ascending.gif"); }
+	table.sort18 th.table-sorted-desc { background-image:url("icons/18_descending.gif"); }
+	
+	table.sort19 th.table-sortable { background-image:url("icons/19_unsorted.gif");padding-left:24px; }
+	table.sort19 th.table-sorted-asc { background-image:url("icons/19_ascending.gif"); }
+	table.sort19 th.table-sorted-desc { background-image:url("icons/19_descending.gif"); }
+	
+	/* Icons box */
+	.iconset {
+		margin:5px;
+		border:0px solid #cccccc;
+		border-color:#cccccc #666666 #666666 #cccccc;
+		text-align:center;
+		cursor:pointer;
+		width:100px;
+	}
+	.iconset img {
+		margin:3px;
+	}
+	
+
+	
+	#iconBottom {
+	    position: relative;
+	    width: 49px;
+	    height: 54px;  /* otherwise it stretches to fill the table cell, causing #iconTop to be posiitoned incorrectly */
+	    text-align: center;
+
+	}
+	
+	#iconTop {
+		vertical-align:middle;
+		text-align:center;
+		position: absolute;
+	    top: 2;
+	    left: 2;
+	    z-index: 10;
+	}
+	
+	#imgBottom {
+	    position: relative;
+	    width: 85px;
+	    height: 10px;  /* otherwise it stretches to fill the table cell, causing #iconTop to be posiitoned incorrectly */
+	    text-align: center;
+	    border:0;
+	    margin:0 auto;
+	    padding: 0;
+	    
+
+	}
+	
+	#imgTop {
+		text-align:center;
+		position: absolute;
+	    left: 9;
+	    z-index: 10;
+	    border:0;
+	    margin:0 auto;
+	    padding: 0;
+	}
+
+	
+	/* Documentation */
+	tr.doc_section {
+		font-weight:bold;
+		text-align:center;
+		background-color:#dddddd;
+	}
+	
+	
+	
+	/* Buttons -- do I need these? */
+	/*
+	.button {
+		background: #5CCFDA; 
+		cursor: pointer; 
+		border-top: 
+		solid 2px #eaeaea; 
+		border-left: solid 2px #eaeaea; 
+		border-bottom: solid 2px #777; 
+		border-right: 
+		solid 2px #777; 
+		padding: 5px 5px;
+	
+	}
+	*/
+	
+	
+	
+	/*
+		#button {
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: -moz-none;
+			-o-user-select: none;
+			user-select: none;
+		}
+	*/	
+	
+	
+	/* #### Charts  #### */ 
+	/* from http://sixrevisions.com/css/css_techniques_charting_data/ */
+	div.barchart table {
+		border-spacing:none;		
+		border-collapse: collapse;
+		background:green;
+		border:0;
+		margin:0;
+		table-layout:fixed;
+		white-space:nowrap;
+		overflow:hidden;
+		font-size:8px;
+	}
+
+	
+	div.barchart	td {
+		line-height:8px;
+		max-width: 30px;
+		width:30px;
+	}
+
+	div.barchart	td.img {
+		vertical-align: middle;
+	}
+	
+	div.barchart	th {
+		text-align: left;
+		vertical-align:top;
+	}
+	
+
+
+	
