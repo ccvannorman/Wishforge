@@ -11,24 +11,20 @@
 	<!--	
 	
 	/*
-		Main page.
-		div for
-			title
-			pic
-			buttons
-			lists
+		TODO:
+			table title
+			login button - FB login, Google login/open login
+			reformat date
+			donate for each list item
+			Wish Page
+				facebook like, tweet, donate, comment.
+			Change FB, Twitter, etc. links for WishForge
+			
+			
 	*/
-	
-	
-	
-	
 	
 	-->
 	
-	
-	
-
-
 	<!-- TABLESORTER stuff -->
 		<!-- CSS for table sorter (table.js) -->
 		<LINK href="wishforge.css" rel="stylesheet" type="text/css">
@@ -223,7 +219,7 @@
 	}
 		
 	
-	}
+
 
 </script>
 
@@ -252,8 +248,7 @@
 	<div id="sticky" style="display:none"></div>
 	<div id="stickyMap" style="display:none"></div>
 <div id="whole document">
-	<div id="header">
-	
+
 		<!-- wish picture -->
 		<div id="picture"> <!-- style="background: url('/ui/wishforge_pic.png'); position:absolute; left:0%; top:0px;"-->	
 			<img src="/ui/wishforge_pic.png">
@@ -275,28 +270,29 @@
 		
 		<!-- One Liner Elevator Pitch -->
 		<div style="position:absolute; right:10%; z-index:10001; top:225px; width:35%">
-			<font color=white><i>A collaboration platform that rewards participants who make a wish come true with cash prizes</i>
+			<font color=white size=5><i>Trade prizes for social change</i>
 		</div>		
 		
 		<!-- Sample wishes -->
 		
 		
 		<!-- Buttons --> 
+		<div id="buttons" style="float:right; margin-right:10%">
 			<!-- create a wish -->
-			<div id="createWish" style="float: left; position:absolute; left:10%; top:415px;">
+			<div id="createWish" style="position:relative; top:100px;">
 				<a href="CreateWish.html"><img src="/ui/wishforge_button_create.png"></a>	
 			</div>
 			
 			<!-- How it works -->
-			<div class="rounded" style="float: left; position:absolute; left:40%; top:415px;">
+			<div class="rounded" style="position:relative; top:120px;">
 				<a href="HowItWorks.html"><img src="/ui/wishforge_button_how.png"></a>	
 			</div>		
 		
-			<!-- How it works -->
-			<div class="rounded" style="float: left; position:absolute; left:70%; top:415px;">
+			<!-- About -->
+			<div class="rounded" style="position:relative; top:140px;">
 				<a href="About.html"><img src="/ui/wishforge_button_about.png"></a>	
 			</div>	
-
+		</div>
 			
 		<!-- Hidden divs -->
 			<!-- Funding Articles -->
@@ -309,15 +305,15 @@
 
 
 			</div>
-						
-	<div id="icons" style="position:absolute; top:10px; z-index:1000; margin:auto; width:100%; white-space:nowrap;">
+			
+	<!-- Facbook buttons etc -->					
+	<div id="icons" style="position:absolute; top:0px; left:0px; padding-top:10px; padding-left:50px; z-index:1000;  width:90%; white-space:nowrap;background:#333333;">
 
-		
-		<!-- feedback -->
-		<div><!-- style="width:15%; position:absolute; top:10px; z-index:1000; margin:auto"-->
+		<!-- Feedback -->
+		<div style="float: left; position:relative; width:100px">
 			<a href="mailto:charles@hactus.com?subject=WishForge feedback"><img src="/ui/feedback.png"></a>
 		</div>
-		
+	
 		<!-- Facebook Like button -->
 		<div id="fb-root"></div>
 		<script>(function(d, s, id) {
@@ -329,10 +325,11 @@
 		}(document, 'script', 'facebook-jssdk'));</script>
 		
 		<div> <!-- position:absolute; left:70%; top:185px; z-index:1000;  -->
-		<fb:like href="www.hactus.com" send="false" width="250" show_faces="false" action="recommend" colorscheme="light" font="arial"></fb:like> </div>
-
+		<fb:like style="float:left; position:relative;" href="www.hactus.com" send="false" width="250" show_faces="false" action="recommend" colorscheme="dark" font="arial"></fb:like> </div>
+	
+		
 		<!-- Twitter Tweet  -->
-		<div style=" width:225px"> <!-- position:absolute; left:70%; top:225px; z-index:1000; -->
+		<div style="float: left; position:relative; "> <!-- position:absolute; left:70%; top:225px; z-index:1000; -->
 			<script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
 			<a href="https://twitter.com/share" class="twitter-share-button"data-count="horizontal" data-via="theleanstartup" data-related="hactus:Check out the Cheat Sheet for Startups - funding, programs, and more!">
 				Tweet
@@ -340,41 +337,208 @@
 		</div>
 		
 		<!-- Twitter Follow  -->
-		<div style="width:225px">	<!-- position:absolute; left:70%; top:260px; z-index:1000; -->
+		<div style="float: left; position:relative;">
 			<a href="https://twitter.com/hactus" class="twitter-follow-button" data-show-count="false">
 				Follow @hactus
 			</a>	
 		</div>		
 	
-	<!-- Subscribe / email submisison -->
-		<div style="width:25%"> <!-- position:absolute; left:70%; top:290px; -->
-			<font size=3>Subscribe to our newsletter:
-			<br>
-			<form><input type="text" 
-					name="URL" 
-					value="you@example.com"
-					onClick="this.select();"
-					style="width:55%">
-				<input type="submit" 
-					value="Submit" 
-					class ="button" 
-					onClick="emailMe('someone subscribed to WishForge updates.',this.form);"
-					style="width:25%"> 
-			</form>
+		<!-- Subscribe / email submisison -->
+		<div style="float: left; position:relative; left:-200px;">
+			<font size=3>
+			<div>
+				<form>Subscribe: <input type="text" 
+						name="URL" 
+						value="you@example.com"
+						onClick="this.select();"
+						style="width:55%">
+					<input type="submit" 
+						value="Submit" 
+						class ="button" 
+						onClick="emailMe('someone subscribed to WishForge updates.',this.form);"
+						style="width:25%"> 
+				</form>
+			</div>
+		</div>
+		
+		
+	</div>
+	
+
+		
+		
+
+		
+		
+</div>
+
+	<!-- Current Wishes table -->
+		<div style="position:absolute;top:270px; width:60%; margin:auto; margin-top:150px; left:10px;">
+			<table class="columns rounded" cellspacing="0" border="0"> 
+	
+				<tr> 
+					 
+					<table id="t1" 
+						class="example 
+							table-autosort 
+							table-autofilter 
+							table-autopage:999 
+							table-stripeclass:alternate 
+							table-page-number:t1page 
+							table-page-count:t1pages 
+							table-filtered-rowcount:t1filtercount 
+							table-rowcount:t1allcount"> 
+					<thead> 								
+						<!-- titles of columns -->
+						<tr id="thead"> 
+							<th class="table-sortable:default" rowspan=2 style="width:100px">
+								Wish
+							</th> 
+							<th class="table-sortable:date" rowspan=2 style="width:60px">	
+								Deadline
+							</th> 
+							<th class="table-sortable:default" style="text-align:left">
+								Current Share Price	<font size=2 color="339966">...........................<font color=white>
+							</th> 
+							<th class="table-sortable:default" style="text-align:left; max-width:180px;width:300px;">
+								Face Value Per Share	<font size=2 color="339966">..................<font color=white>
+							</th>		
+							<th class="table-sortable:default" style="text-align:left; max-width:180px;width:300px;">
+								Total Prize Value	<font size=2 color="339966">..................<font color=white>
+							</th>
+						</tr> 
+					</thead> 
+					<tbody id="events-body">
+					 
+						<?php 
+							//Connect to DB
+							$con = mysql_connect('fractalgamescom.ipagemysql.com', 'ccvannorman', 'k8ve40!.xil');
+
+							if (!$con)  {  die('Could not connect: ' . mysql_error());  }
+							
+							mysql_select_db("wishforge", $con);
+						?>
+		
+		
+						<!-- Select, display, and store events as Javascript -->
+		
+						<?php 
+							$sql="SELECT * FROM wishes"; //Create a Query to select all rows in the table Events
+							$result = mysql_query($sql);
+							$i=0;
+							$j=0;
+							while($row = mysql_fetch_array($result)) //Iterate all rows in query results. Each row will be an event
+							{
+								$i++;
+								
+		
+								// New row: Make markers bounce or infoWindows pop on mouse events
+								echo "<tr>";
+									
+									/* Wish Name */
+									echo "<td><a href='www.fractalgames.com' target=\"_blank\">"  . $row['Wish'] . "</a></td>";
+				
+									/* Deadline */
+									echo "<td width='15px'>" 
+										//Invisible Date. an invisible YYYY-MM-DD is used for sorting purposes.
+										. "<div style='font-size:0px'>"
+											. date( 'Y', strtotime($row['Deadline']))
+											. "-" . date( 'm', strtotime($row['Deadline']))
+											. "-" . date( 'd', strtotime($row['Deadline']))
+										. "</div>";
+										
+										
+										// Here we need to add GCal, YCal, etc in a pop-up window so users can add this to their calendar.
+		
+										/* Visible date */
+										// If date is today, display "today". 
+										if (Date('d-m-Y') == date('d-m-Y', strtotime($row['Deadline'])))
+										{
+											echo '<table class="date"><tr><td class="number">TODAY</td></tr></table>';
+										}
+										// Else display the date
+										else
+										{
+											echo 
+												// With box, calendar style
+												/*<table class="date">
+													<tr>
+														<td class="day" rowspan="2">
+															<b>' . date( 'Y', strtotime($row['Deadline'])) . '</b>
+														</td>
+														<td class="month">
+															<b>' . date( 'M', strtotime($row['Deadline'])) . '</b>
+														</td>
+													</tr>
+													<tr>
+														<td class="number">
+															<b>' . date( 'd', strtotime($row['Deadline'])) . '</b>
+														</td>
+													</tr>
+												</table>*/
+												
+												// No box
+											'
+												<table class="date">
+													<tr>
+														<td class="day" style="width:50px">
+															<b>' . date( 'Y', strtotime($row['Deadline'])) . '</b>
+														</td>
+														
+														<td class="day" style="width:50px">
+															<b>' . date( 'M', strtotime($row['Deadline'])) . '</b>
+														</td>
+														
+														<td class="day">
+															<b>' . date( 'd', strtotime($row['Deadline'])) . '</b>
+														</td>
+
+												</table>
+
+											';
+										}		
+									echo "</td>"; 
+		
+									/* Price */
+									echo "<td>" . $row['Price'] . "</td>";
+
+									
+									/* Face VAlue */
+									echo "<td>" . $row['FaceValue'] . "</td>";
+
+									/* Total prize VAlue */
+									echo "<td>" . $row['PrizeValue'] . "</td>";
+
+
+								echo "</tr>";
+								
+							}		
+							
+							
+							mysql_close($con);
+						?>
+		
+		
+					</tbody>
+					<tfoot> 
+		
+						<tr> 
+							<td colspan="5">
+						</tr> 
+						<tr> 
+							<td colspan="5"><span id="t1filtercount"></span>&nbsp;of <span id="t1allcount"></span>&nbsp;rows match filter(s)</td> 
+					</tfoot> 
+				</table>
 		</div>
 
-	</div>
 
 
+
+
+
+
+
 	
-	
-	<!-- place you jump to if you hit a new tab -->
-	<div id="divMarker">
-	
-		 </center>
-		 <br>
-		<font size=4>
-		
 		
 	
 		<center>
